@@ -11,38 +11,39 @@
 
 ### 安装SuperSU Installer
 1. [下载](https://github.com/ZH-XiJun/SuperSUInstaller/releases/) 或自行编译SupersuInstaller
-2. 安装 小天才启动器 到手表，位置同上下载链接
-3. 安装此app到手表
+2. 安装 小天才启动器 到手表，位置同上下载链接，安装方法同下
+3. 下载 SuperSU_ForXTC.apk 到电脑（无需安装），位置同上下载链接
+4. 安装此app到手表
 ```
-adb push SuperSUInstaller.apk /sdcard/1.apk
+C:>adb push SuperSUInstaller.apk /sdcard/1.apk
+C:>adb shell
+shell@sp9820e_xtc:/ $ pm install /sdcard/1.apk
+        pkg: /sdcard/1.apk
+Success
 ```
+`adb shell` 与 `pm install` 一定要分开执行，否则会被pm锁拦截！
+
 ### Installing SuperSU
-1. Disable WiFi (Settings->Wifi).
-2. Open the dialer (Phone).
-3. Enter `*#*#83781#*#*` (you do not need to press the green button).
-4. In the engineering menu that opens, switch to the "CONNECTIVITY" tab.
-5. Click "Start Service"
-6. Select "Wifi eut" and click "OK"
-7. Run the SuperSUInstaller using adb:
+1. 在手表设置中关闭WiFi
+2. 打开拨号盘，输入 `*#*#83781#*#*`
+3. 在弹出的页面中切换到 CONNECTIVITY 界面
+4. 点击 "Start Service"
+5. 点击 "Wifi eut" 并在弹出的窗口中点 "OK"
+6. 在电脑上执行这条指令以启动Supersu Installer：
 ```
 adb shell 'am start -n ru.eisaev.supersuinstaller/.MainActivity'
 ```
-8. Wait for the message "Hello World!" to appear.
-9. Open File Explorer (Settings->Clear tools->File Explorer) and find SuperSU-v2.82-SR5.apk file (Local).
-10. Install SuperSU-v2.82-SR5.apk and run it immediately after installation by clicking "Open".
-11. Confirm the binary update using the "Normal" mode.
-12. After the update is complete, confirm that the device is rebooted.
-13. After booting the device, run the SuperSU GUI again:
-```
-adb shell 'am start -n eu.chainfire.supersu/.MainActivity'
-```
-14. Select "SETTINGS" tab and switch "Default access" to "Grant" (unfortunately, the prompt does not appear on these devices).
+7. 等待APP显示 "Hello World!"
+8. 将你下载到的 SuperSU_ForXTC.apk 安装至手表，方法同上 “安装SuperSU Installer”
+10. 使用 小天才启动器 启动SuperSU软件，提示更新SU二进制，点 “常规方式”，升级成功后重启手表
+11. 重启完毕后再次启动SuperSU，检查root状态
+14. 在 设置-默认操作 中将询问改成授权，否则SuperSU不弹窗，无法授权root！
 
-Now you can use applications that require root permissions, as well as use the root console using adb:
+现在你可以在手表上随意使用root，在adb上也是一样：
 ```
-$ adb shell
-shell@G4E:/ $ su
-root@G4E:/ # id
+C:>adb shell
+shell@sp9820e_xtc:/ $ su
+root@sp9820e_xtc:/ # id
 uid=0(root) gid=0(root) context=kernel
 ```
-
+图文教程可看[B站专栏](https://www.bilibili.com/read/cv20433593?spm_id_from=333.999.0.0)，原作者[eisaev](https://github.com/eisaev)，原项目地址[点此](https://github.com/eisaev/SuperSUInstaller/)
