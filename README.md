@@ -1,22 +1,20 @@
 # SuperSU Installer
-This is a program for obtaining root permissions on a smart watch based on the Unisoc/Spreadtrum SP9820E SoC. This method will presumably work on all existing clones, such as A36E, Wonlex KT11, Lemfo     G4H 4G, etc. The installer uses the manufacturer's backdoor for engineering mode.
+这是一个在基于 Unisoc/Spreadtrum SP9820E SoC 的智能手表上获取root权限的软件。该方法应该能适用于所有型号的手表，例如 A36E, Wonlex KT11, Lemfo G4H 4G等（我不认识）。该程序利用了制造商的后门而实现
 
-## HowTo
-### Enable USB Debugging
-1. Download [Shortcut Creator](https://play.google.com/store/apps/details?id=com.alextern.shortcuthelper) (apk file is available for download for example on [4pda](https://4pda.to/forum/index.php?showtopic=887333))
-2. Send apk file via Bluetooth to your watch.
-3. Open File Explorer (Settings->Clear tools->File Explorer) and find downloaded file (Local->bluetooth).
-4. Install apk and run it immediately after installation by clicking "Open".
-5. In Shortcut Creator, select "Settings" and find "Developer options".
-6. Click the triangle in the upper-right corner.
-7. In the list that appears, enable the "USB debugging" item.
+这个仓库专为小天才手表适配，适用手表为Z1y/s, Q1y/s等采用了SP9820E SoC的手表
 
-Now you can work with the watch using adb.
-### Installing SuperSUInstaller
-1. [Download](https://github.com/eisaev/SuperSUInstaller/releases/) or build SuperSUInstaller.
-2. Install apk to the watch:
+## 食用方法
+
+### 启用ADB调试
+
+对于小天才手表来说，只需要在拨号盘输入 `*#0769651#*` 即可
+
+### 安装SuperSU Installer
+1. [下载](https://github.com/ZH-XiJun/SuperSUInstaller/releases/) 或自行编译SupersuInstaller
+2. 安装 小天才启动器 到手表，位置同上下载链接
+3. 安装此app到手表
 ```
-adb install SuperSUInstaller.apk
+adb push SuperSUInstaller.apk /sdcard/1.apk
 ```
 ### Installing SuperSU
 1. Disable WiFi (Settings->Wifi).
