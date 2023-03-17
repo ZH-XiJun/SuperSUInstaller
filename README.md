@@ -22,9 +22,9 @@ shell@sp9820e_xtc:/ $ pm install /sdcard/1.apk                     # 使用pm安
 Success
 ```
 `adb shell` 与 `pm install` 一定要分开执行，否则会被pm锁拦截！
-D3等较新机型在执行adb push指令时时可能会遇到 `adb push is not allowed by XTC` ，这时候
+D3等较新机型在执行adb push指令时时可能会遇到 `adb push is not allowed by XTC` ，这时候请[解除Push锁](https://github.com/ReX-iMoo-Team/iMoo-Toolkit)后再试
 
-### Installing SuperSU
+### 刷入 SuperSU
 1. 在手表设置中关闭WiFi
 2. 打开拨号盘，输入 `*#*#83781#*#*`
 3. 在弹出的页面中切换到 CONNECTIVITY 界面
@@ -35,7 +35,7 @@ D3等较新机型在执行adb push指令时时可能会遇到 `adb push is not a
 adb shell 'am start -n ru.eisaev.supersuinstaller/.MainActivity'
 ```
 7. 等待APP显示 "Hello World!"
-8. 将你下载到的 SuperSU_ForXTC.apk 安装至手表，方法同上 “安装SuperSU Installer”
+8. 将你下载到的 SuperSU_ForXTC.apk 安装至手表，方法同上 [“安装SuperSU Installer”](https://github.com/ZH-XiJun/SuperSUInstaller#%E5%AE%89%E8%A3%85supersu-installer)
 10. 使用 小天才启动器 启动SuperSU软件，提示更新SU二进制，点 “常规方式”，升级成功后重启手表
 11. 重启完毕后再次启动SuperSU，检查root状态
 14. 在 设置-默认操作 中将询问改成授权，否则SuperSU不弹窗，无法授权root！
