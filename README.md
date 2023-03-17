@@ -1,7 +1,7 @@
 # SuperSU Installer
 这是一个在基于 Unisoc/Spreadtrum SP9820E SoC 的智能手表上获取root权限的软件。该方法应该能适用于所有型号的手表，例如 A36E, Wonlex KT11, Lemfo G4H 4G等（我不认识）。该程序利用了制造商的后门而实现
 
-这个仓库专为小天才手表适配，适用手表为Z1y/s, Q1y/s等采用了SP9820E SoC的手表
+这个仓库的README为小天才手表优化，适用手表为Z1y/s, Q1y/s等采用了SP9820E SoC的手表
 
 ## 食用方法
 
@@ -15,13 +15,14 @@
 3. 下载 SuperSU_ForXTC.apk 到电脑（无需安装），位置同上下载链接
 4. 安装此app到手表
 ```
-C:>adb push SuperSUInstaller.apk /sdcard/1.apk
-C:>adb shell
-shell@sp9820e_xtc:/ $ pm install /sdcard/1.apk
+C:\Users\Administrator>adb push SuperSUInstaller.apk /sdcard/1.apk # 将apk上传至手表
+C:\Users\Administrator>adb shell                                   # 进入安卓shell环境
+shell@sp9820e_xtc:/ $ pm install /sdcard/1.apk                     # 使用pm安装软件
         pkg: /sdcard/1.apk
 Success
 ```
 `adb shell` 与 `pm install` 一定要分开执行，否则会被pm锁拦截！
+D3等较新机型在执行adb push指令时时可能会遇到 `adb push is not allowed by XTC` ，这时候
 
 ### Installing SuperSU
 1. 在手表设置中关闭WiFi
@@ -41,7 +42,7 @@ adb shell 'am start -n ru.eisaev.supersuinstaller/.MainActivity'
 
 现在你可以在手表上随意使用root，在adb上也是一样：
 ```
-C:>adb shell
+C:\Users\Administrator>adb shell
 shell@sp9820e_xtc:/ $ su
 root@sp9820e_xtc:/ # id
 uid=0(root) gid=0(root) context=kernel
