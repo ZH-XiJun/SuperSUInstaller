@@ -51,7 +51,7 @@ adb shell am start -n ru.eisaev.supersuinstaller/.MainActivity
    对于小天才来说，使用 小天才启动器 启动SuperSU软件
 
    对于米兔与360来说，请在各自的[调试菜单](#启用adb调试)中找到`三方应用`选项，然后找到SuperSU的包名`eu.chainfire.supersu`并点入
-9. SuperSU应提示提示更新SU二进制，点 “常规方式”，更新成功后重启手表
+9. SuperSU应提示更新SU二进制，点 “常规方式”，更新成功后重启手表
 10. 重启完毕后再次启动SuperSU，检查root状态
 11. 在 设置-默认操作 中将询问改成授权，否则SuperSU不弹窗，无法授权root！
 
